@@ -8,7 +8,8 @@ import java.util.List;
 
 @Repository
 public class TouristRepository {
-    List<TouristAttraction> touristAttractionList = new ArrayList<>(List.of(new TouristAttraction("Bakkens Hvile", "Stort"), new TouristAttraction("Tivoli", "Stort men dyrt")));
+    List<TouristAttraction> touristAttractionList = new ArrayList<>(List.of(new TouristAttraction("Bakkens Hvile", "Stort"),
+            new TouristAttraction("Tivoli", "Stort men dyrt")));
 
     public List<TouristAttraction> getTouristAttractionList(){
         return touristAttractionList;
