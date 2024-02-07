@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 public class TouristRepository {
@@ -18,5 +19,14 @@ public class TouristRepository {
        touristAttractionList.add(touristAttraction);
        return touristAttraction;
 
+    }
+    public TouristAttraction changeAttraction(TouristAttraction touristAttraction){
+        int i = 0;
+        while (i < touristAttractionList.size()){
+            if (Objects.equals(touristAttraction.getName(), touristAttractionList.get(i).getName())){
+                touristAttractionList.set(i, touristAttraction);
+            }
+            i++;
+        }return null;
     }
 }

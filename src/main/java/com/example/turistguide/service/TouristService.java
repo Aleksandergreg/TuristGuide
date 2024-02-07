@@ -20,4 +20,7 @@ public class TouristService {
     public TouristAttraction postTouristAttraction(TouristAttraction touristAttraction){
         return touristRepository.addTouristAttraction(touristAttraction);
     }
+    public TouristAttraction updateTouristAttraction(TouristAttraction touristAttraction){
+        return touristRepository.changeAttraction(touristAttraction);
+    }
 }
