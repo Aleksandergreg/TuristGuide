@@ -29,4 +29,17 @@ public class TouristRepository {
             i++;
         }return null;
     }
+    public TouristAttraction deleteAttraction(TouristAttraction touristAttraction){
+        int foundIndex = -1;
+        TouristAttraction touristAttractionToDelete = new TouristAttraction("Ikke", "Fundet");
+        for (int i = 0; i <touristAttractionList.size(); i++){
+            if (touristAttraction.getName() == touristAttractionList.get(i).getName()){
+                foundIndex = i;
+            }
+        }if (foundIndex != -1){
+            touristAttractionToDelete = touristAttractionList.get(foundIndex);
+            touristAttractionList.remove(foundIndex);
+        }
+        return touristAttractionToDelete;
+    }
 }
