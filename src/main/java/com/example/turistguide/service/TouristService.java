@@ -17,4 +17,7 @@ public class TouristService {
     public List<TouristAttraction> getTouristAttractionList() {
         return touristRepository.getTouristAttractionList();
     }
+    public TouristAttraction postTouristAttraction(TouristAttraction touristAttraction){
+        return touristRepository.addTouristAttraction(touristAttraction);
+    }
 }

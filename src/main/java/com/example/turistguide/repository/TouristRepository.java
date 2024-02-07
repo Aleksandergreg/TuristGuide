@@ -11,8 +11,12 @@ public class TouristRepository {
     List<TouristAttraction> touristAttractionList = new ArrayList<>(List.of(new TouristAttraction("Bakkens Hvile", "Stort"),
             new TouristAttraction("Tivoli", "Stort men dyrt")));
 
-    public List<TouristAttraction> getTouristAttractionList(){
+    public List<TouristAttraction> getTouristAttractionList() {
         return touristAttractionList;
     }
+    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction){
+       touristAttractionList.add(touristAttraction);
+       return touristAttraction;
 
+    }
 }
