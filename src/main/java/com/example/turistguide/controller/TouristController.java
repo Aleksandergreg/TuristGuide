@@ -35,21 +35,22 @@ public class TouristController {
         return new ResponseEntity<>(test, HttpStatus.OK);
     }
 
-   @PostMapping("/add")
+    @PostMapping("/add")
     public ResponseEntity<TouristAttraction> addAttraction(@RequestBody TouristAttraction attractionToAdd) {
         TouristAttraction touristAttraction = touristService.postTouristAttraction(attractionToAdd);
         return new ResponseEntity<TouristAttraction>(touristAttraction, HttpStatus.OK);
     }
 
     @PutMapping("/update")
-        public ResponseEntity<TouristAttraction> updateAttraction(@RequestBody TouristAttraction attractionToUpdate) {
-            TouristAttraction touristAttraction = touristService.updateTouristAttraction(attractionToUpdate);
-            return new ResponseEntity<TouristAttraction>(touristAttraction, HttpStatus.OK);
-        }
+    public ResponseEntity<TouristAttraction> updateAttraction(@RequestBody TouristAttraction attractionToUpdate) {
+        TouristAttraction touristAttraction = touristService.updateTouristAttraction(attractionToUpdate);
+        return new ResponseEntity<TouristAttraction>(touristAttraction, HttpStatus.OK);
+    }
 
-    @GetMapping("/delete/{name}")
+    @DeleteMapping("/delete/{name}")
     public ResponseEntity<TouristAttraction> deleteAttraction(@RequestBody TouristAttraction attractionToDelete) {
-        return null;
+        TouristAttraction touristAttraction = touristService.deleteTouristAttraction(attractionToDelete);
+        return new ResponseEntity<TouristAttraction>(touristAttraction, HttpStatus.OK);
     }
 
 }

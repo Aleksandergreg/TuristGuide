@@ -47,7 +47,7 @@ public class TouristRepository {
 
     public TouristAttraction deleteAttraction(TouristAttraction touristAttraction){
         int foundIndex = -1;
-        TouristAttraction touristAttractionToDelete = new TouristAttraction("Ikke", "Fundet");
+        TouristAttraction touristAttractionToDelete = new TouristAttraction(touristAttraction.getName(),touristAttraction.getDescription());
         for (int i = 0; i <touristAttractionList.size(); i++){
             if (touristAttraction.getName() == touristAttractionList.get(i).getName()){
                 foundIndex = i;
