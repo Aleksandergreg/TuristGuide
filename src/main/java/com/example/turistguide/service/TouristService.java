@@ -27,8 +27,8 @@ public class TouristService {
     public TouristAttraction findTouristAttraction(String name) {
         return touristRepository.findTouristAttraction(name);
     }
-    public TouristAttraction deleteTouristAttraction(TouristAttraction touristAttraction){
-        TouristAttraction touristAttractionToDelete = touristRepository.deleteAttraction(touristAttraction);
+    public TouristAttraction deleteTouristAttraction(String nameToDelete){
+        TouristAttraction touristAttractionToDelete = touristRepository.deleteAttractionTest(nameToDelete);
              return touristAttractionToDelete;
     }
 }

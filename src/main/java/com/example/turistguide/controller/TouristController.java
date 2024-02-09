@@ -47,7 +47,7 @@ public class TouristController {
     }
 
     @DeleteMapping("/delete/{name}")
-    public ResponseEntity<TouristAttraction> deleteAttraction(@RequestBody TouristAttraction attractionToDelete) {
+    public ResponseEntity<TouristAttraction> deleteAttraction(@PathVariable("name") String attractionToDelete) {
         TouristAttraction touristAttraction = touristService.deleteTouristAttraction(attractionToDelete);
         return new ResponseEntity<TouristAttraction>(touristAttraction, HttpStatus.OK);
     }
