@@ -6,6 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -23,9 +27,12 @@ public class TouristController {
         return new ResponseEntity<List<TouristAttraction>>(touristService.getTouristAttractionList(), HttpStatus.OK);
     }
 
-    @GetMapping("/attractions/{name}")
-    public ResponseEntity<List<TouristAttraction>> getAttractionsByName() {
-        return null;
+
+    //Er ikke færdig
+    @GetMapping(value = "/{name}")
+    public ResponseEntity<TouristAttraction> getAttractionByName(@PathVariable("name") String name) {
+        TouristAttraction test = touristService.getAttractionByName(name);
+        return new ResponseEntity<>(test, HttpStatus.OK);
     }
 
    @PostMapping("/add")

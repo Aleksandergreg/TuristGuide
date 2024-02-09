@@ -9,17 +9,32 @@ import java.util.Objects;
 
 @Repository
 public class TouristRepository {
-    List<TouristAttraction> touristAttractionList = new ArrayList<>(List.of(new TouristAttraction("Bakkens Hvile", "Stort"),
-            new TouristAttraction("Tivoli", "Stort men dyrt")));
+    List<TouristAttraction> touristAttractionList = new ArrayList<>(List.of(
+            new TouristAttraction("Bakkens Hvile", "Stort"),
+            new TouristAttraction("Tivoli", "Stort men dyrt"),
+            new TouristAttraction("Rundetårn", "Højt og flot")));
 
     public List<TouristAttraction> getTouristAttractionList() {
         return touristAttractionList;
     }
-    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction){
-       touristAttractionList.add(touristAttraction);
-       return touristAttraction;
-
+    public TouristAttraction addTouristAttraction(TouristAttraction touristAttraction) {
+        touristAttractionList.add(touristAttraction);
+        return touristAttraction;
     }
+
+    public TouristAttraction findTouristAttraction(String nameToSearchFor) {
+        for (TouristAttraction touristAttraction : touristAttractionList) {
+            if (touristAttraction.getName().equalsIgnoreCase(nameToSearchFor)) {
+                return touristAttraction;
+            }
+        }
+        return null;
+    }
+
+    public TouristAttraction getAttractionByName(String name) {
+        return findTouristAttraction(name);
+    }
+
     public TouristAttraction changeAttraction(TouristAttraction touristAttraction){
         int i = 0;
         while (i < touristAttractionList.size()){
@@ -29,6 +44,7 @@ public class TouristRepository {
             i++;
         }return null;
     }
+
     public TouristAttraction deleteAttraction(TouristAttraction touristAttraction){
         int foundIndex = -1;
         TouristAttraction touristAttractionToDelete = new TouristAttraction("Ikke", "Fundet");
