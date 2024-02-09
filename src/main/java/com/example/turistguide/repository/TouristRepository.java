@@ -31,10 +31,6 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction getAttractionByName(String name) {
-        return findTouristAttraction(name);
-    }
-
     public TouristAttraction changeAttraction(TouristAttraction touristAttraction){
         int i = 0;
         while (i < touristAttractionList.size()){
@@ -57,5 +53,15 @@ public class TouristRepository {
             touristAttractionList.remove(foundIndex);
         }
         return touristAttractionToDelete;
+    }
+
+    public TouristAttraction deleteAttractionTest(String nameToDelete) {
+        TouristAttraction attractionToDelete = findTouristAttraction(nameToDelete);
+        if (attractionToDelete != null) {
+            touristAttractionList.remove(attractionToDelete);
+            return attractionToDelete;
+        } else {
+            return null;
+        }
     }
 }

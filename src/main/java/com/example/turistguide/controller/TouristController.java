@@ -31,8 +31,7 @@ public class TouristController {
     //Er ikke færdig
     @GetMapping(value = "/{name}")
     public ResponseEntity<TouristAttraction> getAttractionByName(@PathVariable("name") String name) {
-        TouristAttraction test = touristService.getAttractionByName(name);
-        return new ResponseEntity<>(test, HttpStatus.OK);
+        return new ResponseEntity<>(touristService.findTouristAttraction(name), HttpStatus.OK);
     }
 
     @PostMapping("/add")
