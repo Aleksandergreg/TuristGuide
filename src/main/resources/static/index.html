@@ -21,9 +21,9 @@
         <option value="Bakkens Hvile">Bakkens Hvile</option>
         <option value="Rundetårn">Rundetårn</option>
     </select>
-    <a id="attractionLink" href="http://localhost:8080/attractions/{name}">
-        <button>Se attraktion</button>
-    </a>
+        <a id="attractionLink" href="http://localhost:8080/attractions/{name}">
+            <button>Se attraktion</button>
+        </a>
     </label>
 </fieldset>
 
@@ -36,14 +36,11 @@
 </script>
 </body>
 <body>
-<form action="/delete" method="get">
-    <label for="attraction">Select Attraction:</label>
-    <select id="attraction" name="attraction">
-        <option value="Tivoli">Tivoli</option>
-        <option value="attraction2">Attraction 2</option>
-
-    </select>
-    <button type="submit">Delete</button>
+<form action="/attractions/delete/tivoli" method="get">
+    <input type="submit" value="Slet Tivoli">
+</form>
+<form action="/attractions/delete/rundetårn" method="get">
+    <input type="submit" value="Slet Rundetårn">
 </form>
 </body>
 </html>
