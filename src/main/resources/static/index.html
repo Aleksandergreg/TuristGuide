@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 <a href="http://localhost:8080"></a>
 <head>
     <meta charset="UTF-8">
@@ -35,14 +36,14 @@
 </script>
 </body>
 <body>
-<form action="delete/{name}" method="get"></form>
-<fieldset>
-    <legend>Slet en attraktion</legend>
-    <select id="sletAttraktion" name="deleteAttraction" onchange="updateLink()">
-        <option value="Tivoli"> Tivoli</option>
-        <option value="Bakkens Hvile">Bakkens Hvile</option>
-        <option value="Rundetårn">Rundetårn</option>
+<form action="/delete" method="get">
+    <label for="attraction">Select Attraction:</label>
+    <select id="attraction" name="attraction">
+        <option value="Tivoli">Tivoli</option>
+        <option value="attraction2">Attraction 2</option>
+
     </select>
-</fieldset>
+    <button type="submit">Delete</button>
+</form>
 </body>
 </html>
