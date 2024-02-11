@@ -1,14 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <a href="http://localhost:8080"></a>
 <head>
     <meta charset="UTF-8">
     <title>Turistguide</title>
 </head>
 <body>
-    <p>Hello bozo</p>
-    <a href="/attractions">
-        <button>Liste over alle attraktioner</button>
+<h1>Velkommen til karl og Aleksanders turistguide</h1>
+<a href="http://localhost:8080/attractions">
+    <button>Se alle turistattraktioner</button>
+</a>
+</body>
+<body>
+<form action="/{name}" method="get"></form>
+<fieldset>
+    <legend>Se en specifik attraktion</legend>
+    <label for="attraktion"><select id="attraktion" name="attractions" onchange="updateLink()">
+        <option value="Tivoli"> Tivoli</option>
+        <option value="Bakkens Hvile">Bakkens Hvile</option>
+        <option value="Rundetårn">Rundetårn</option>
+    </select>
+    <a id="attractionLink" href="http://localhost:8080/attractions/{name}">
+        <button>Se attraktion</button>
     </a>
+    </label>
+</fieldset>
+
+<script>
+    function updateLink() {
+        var selectedAttraction = document.getElementById('attraktion').value;
+        var link = document.getElementById('attractionLink');
+        link.href = 'http://localhost:8080/attractions/' + encodeURIComponent(selectedAttraction);
+    }
+</script>
+</body>
+<body>
+<form action="delete/{name}" method="get"></form>
+<fieldset>
+    <legend>Slet en attraktion</legend>
+    <select id="sletAttraktion" name="deleteAttraction" onchange="updateLink()">
+        <option value="Tivoli"> Tivoli</option>
+        <option value="Bakkens Hvile">Bakkens Hvile</option>
+        <option value="Rundetårn">Rundetårn</option>
+    </select>
+</fieldset>
 </body>
 </html>
